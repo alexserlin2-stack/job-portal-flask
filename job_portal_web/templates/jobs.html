@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobs</title>
+</head>
+<body>
+
+<h2>Available Jobs</h2>
+
+<ul>
+    {% for job in jobs %}
+        <li>
+            {{ job[1] }}
+            <form action="/apply" method="post" style="display:inline;">
+                <input type="hidden" name="job" value="{{ job }}">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <button type="submit">Apply</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="/">Back</a>
+
+</body>
+</html>
